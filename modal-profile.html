@@ -1,0 +1,29 @@
+<div class="modal">
+    <div class="modal__title">Изменить профиль</div>
+    <form action="" class="form form--modal">
+        <div class="form-row form-row--wrapper">
+            <div class="form-row__title">Изменить Ф.И.О</div>
+            <div class="form-row__content">
+                <input type="text" name="last-name" placeholder="Фамилия">
+                <input type="text" name="first-name" placeholder="Имя">
+                <input type="text" name="middle-name" placeholder="Отчество">
+            </div>
+        </div>
+        <div class="form-row form-row--wrapper">
+            <div class="form-row__title">Изменить пароль</div>
+            <div class="form-row__content">
+                <input type="text" name="old-password" placeholder="Текущий пароль">
+                <input type="text" name="new-password" placeholder="Введите пароль">
+                <input type="text" name="repeat-password" placeholder="Пароль еще раз">
+            </div>
+        </div>
+        <div class="form-row form-row--wrapper form-row--file">
+            <p>Изменить фото профиля</p>
+            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+            <label for="avatar" data-file-name="...">Загрузить</label>
+        </div>
+        <div class="form-row form-row--submit mt-1">
+            <button type="submit" class="btn form-submit">Сохранить</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,233 @@
+.header {
+    &--bg {
+        background-color: $bg-l;
+    }
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    row-gap: 20px;
+
+    &.is-active {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        background-color: $bg;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-y: auto;
+        padding-bottom: 40px;
+
+        .header-menu-show {
+            display: none;
+        }
+
+        .header-menu-hide {
+            display: flex;
+        }
+
+        .main-nav {
+            display: flex;
+            width: 100%;
+            padding: 0 10px;
+            max-width: 500px;
+        }
+
+        .main-menu {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            padding: 2em;
+        }
+
+        .main-status {
+            display: flex;
+        }
+
+        .main-logo {
+            &__wrap {
+                width: 100%;
+                padding: 15px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+.header-menu-show {
+    background: none;
+    border: none;
+
+    @media screen and (min-width: $bp-lg) {
+        display: none;
+    }
+
+    > svg {
+        pointer-events: none;
+    }
+}
+
+.header-menu-hide {
+    display: none;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    border: none;
+    background-color: $bg-i;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    flex-shrink: 0;
+
+    > svg {
+        display: block;
+        pointer-events: none;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &:hover {
+        box-shadow: 0 0 0 5px $main-dd;
+    }
+}
+
+.main-logo {
+    display: block;
+    margin-right: 20px;
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 500px;
+        row-gap: 10px;
+    }
+
+    > img {
+        display: block;
+    }
+}
+
+.main-nav {
+    display: none;
+    column-gap: 26px;
+    font-weight: 400;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+
+    &__btn {
+        border-radius: 4em;
+        padding: 1.15em 3em;
+        font-size: 16px;
+        transition:
+            box-shadow $t-value,
+            background-color $t-value;
+
+        &:hover {
+            box-shadow: 0 0 0 5px $main-dd;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+
+        @media screen and (min-width: $bp-xl) {
+            padding: 1.7em 4em;
+            font-size: 18px;
+        }
+    }
+
+    @media screen and (min-width: $bp-lg) {
+        margin-left: auto;
+        flex-direction: row;
+        display: flex;
+    }
+}
+
+.main-menu {
+    display: flex;
+    column-gap: 2em;
+    margin: 0;
+    padding: 0 2em;
+    list-style: none;
+    background-color: $bg-i;
+    border-radius: $br-lg;
+    font-size: 15px;
+
+    @media screen and (min-width: $bp-xl) {
+        column-gap: 3em;
+        padding: 0 3.6em;
+        font-size: 16px;
+        border-radius: $br-xl;
+        max-width: none;
+        width: auto;
+    }
+
+    a {
+        display: block;
+        padding: 1.2em 0;
+        color: $text-d;
+        text-decoration: none;
+        transition: $t;
+        white-space: nowrap;
+
+        @media screen and (min-width: $bp-xl) {
+            padding: 2em 0;
+        }
+
+        &:hover {
+            color: $main;
+        }
+    }
+}
+
+.main-status {
+    background-color: $bg-i;
+    color: $text-i;
+    display: none;
+    column-gap: 14px;
+    padding: 10px 14px;
+    align-items: center;
+    border-radius: 2em;
+    font-size: 15px;
+    font-weight: 400;
+    margin-right: 20px;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: $good;
+        border-radius: 50%;
+        border: 6px solid lighten($good, 40);
+    }
+
+    &::after {
+        content: "Online";
+        transform: translateY(2px);
+    }
+
+    &--offline {
+        &::after {
+            content: "Offline";
+        }
+    }
+
+    @media screen and (min-width: $bp-lg) {
+        display: flex;
+    }
+
+    @media screen and (min-width: $bp-xl) {
+        padding: 12px 18px;
+        font-size: 17.5px;
+    }
+}

@@ -1,0 +1,200 @@
+.lection-cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+
+.lection-card {
+    padding: 15px;
+    display: grid;
+    align-items: center;
+    column-gap: 20px;
+    border: 1.45px solid $line;
+    border-radius: $br-md;
+
+    @media screen and (min-width: $bp-lg) {
+        border-radius: $br-lg;
+        padding: 20px;
+        grid-template-columns: 2.5fr 3fr;
+    }
+
+    @media screen and (min-width: $bp-xl) {
+        border-radius: $br-xl;
+    }
+
+    &__content {
+        padding: 25px 0;
+
+        @media screen and (min-width: $bp-lg) {
+            padding: 20px;
+        }
+    }
+
+    &__badge {
+        display: inline-flex;
+        background-color: $bg-i;
+        color: $text-i;
+        border-radius: $br-lg;
+        padding: 0.33em 0.75em;
+        font-size: 14px;
+        margin-bottom: 1em;
+
+        @media screen and (min-width: $bp-lg) {
+            font-size: 17.5px;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+
+        @media screen and (min-width: $bp-lg) {
+            font-size: 30px;
+        }
+    }
+
+    &__subtitle {
+        margin: 1em 0;
+        font-size: 14px;
+
+        @media screen and (min-width: $bp-lg) {
+            font-size: 16px;
+        }
+    }
+
+    &__btn {
+        font-weight: 400;
+        box-shadow: 0 0 0 5px transparent;
+        transition:
+            background-color $t-value,
+            box-shadow $t-value;
+
+        &:hover {
+            background-color: $main-d;
+            box-shadow: 0 0 0 5px $main-dd;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+
+    &__pic {
+        position: relative;
+
+        > img {
+            display: block;
+            border-radius: $br-md;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+
+            @media screen and (min-width: $bp-lg) {
+                border-radius: $br-xl;
+            }
+        }
+    }
+
+    &__status {
+        z-index: 99;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+        font-weight: 300;
+        background-color: $bg-t-d;
+        padding: 5px 20px 5px 6px;
+        border-radius: $br-xl;
+        backdrop-filter: blur(5px);
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+
+        @media screen and (min-width: $bp-lg) {
+            top: 28px;
+            left: 28px;
+            font-size: 20px;
+        }
+
+        &::before {
+            flex-shrink: 0;
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: url("/assets/img/icons/lock-up.svg") no-repeat center / 60% $bg-t-d;
+
+            @media screen and (min-width: $bp-lg) {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+
+    &__play {
+        z-index: 99;
+        border: none;
+        left: 10px;
+        bottom: 10px;
+        position: absolute;
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: $line;
+        transition:
+            background-color $t-value,
+            box-shadow $t-value;
+        box-shadow: 0 0 0 5px transparent;
+
+        @media screen and (min-width: $bp-lg) {
+            left: 28px;
+            bottom: 36px;
+            width: 105px;
+            height: 105px;
+        }
+
+        &:hover {
+            background-color: $main;
+            box-shadow: 0 0 0 5px $main-dd;
+
+            &::before {
+                filter: brightness(10);
+            }
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 26px;
+            height: 26px;
+            background: url("/assets/img/play.svg") no-repeat center / 100%;
+            position: absolute;
+            top: calc(50% - 13px);
+            left: calc(50% - 10px);
+            transition: $t;
+        }
+    }
+
+    &--is-locked {
+        .lection-card {
+            &__pic {
+                img {
+                    filter: grayscale(1);
+                }
+            }
+            &__status {
+                background-color: $bg-i;
+                color: $text-i;
+
+                &::before {
+                    background: url("/assets/img/icons/lock-down.svg") no-repeat center / 60% $bg-l;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,116 @@
+.welcome {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: $bp-lg) {
+        margin-bottom: 90px;
+    }
+
+    &__title {
+        font-size: 13vw;
+        font-weight: 700;
+        line-height: 1.1;
+        transform: translateX(-7px);
+
+        @media screen and (min-width: $bp-lg) {
+            font-size: 150px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        font-weight: 300;
+        max-width: 970px;
+        line-height: 1.6;
+        margin-top: 24px;
+    }
+}
+
+.welcome-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    min-height: 350px;
+
+    @media screen and (min-width: $bp-lg) {
+        min-height: 480px;
+    }
+
+    .btn-play {
+        transform: translateX(-50%);
+        width: 200px;
+        height: 200px;
+
+        @media screen and (min-width: $bp-lg) {
+            transform: none;
+            width: 243px;
+            height: 243px;
+        }
+    }
+
+    &__decor {
+        margin-left: 35%;
+        position: relative;
+        z-index: 1;
+        // border: 1px solid blue;
+
+        width: 50%;
+        height: auto;
+
+        > img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (min-width: $bp-sm) {
+            width: auto;
+            height: auto;
+        }
+
+        &--wide {
+            margin-left: 0;
+            display: flex;
+            column-gap: 300px;
+
+            img {
+                flex-shrink: 0;
+                width: auto;
+                width: revert-layer;
+
+                &:first-child {
+                    position: absolute;
+                    left: -40%;
+                    transform: translateY(-60%) scale(0.9);
+
+                    @media screen and (min-width: $bp-sm) {
+                        position: relative;
+                        left: auto;
+                        transform: translateY(-20%);
+                    }
+                }
+
+                &:nth-child(2) {
+                    position: absolute;
+                    left: 60%;
+                    transform: translateY(-20%) scale(0.9);
+
+                    @media screen and (min-width: $bp-sm) {
+                        position: relative;
+                        left: auto;
+                        transform: translateY(0%);
+                    }
+                }
+            }
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        z-index: 0;
+        // border: 1px solid blue;
+    }
+}

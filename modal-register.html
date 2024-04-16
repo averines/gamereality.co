@@ -1,0 +1,30 @@
+<div class="modal">
+    <div class="modal__title">Регистрация</div>
+    <form action="" class="form form--modal">
+        <div class="form-row">
+            <input type="text" name="tel" placeholder="Телефон">
+            <input type="text" name="email" placeholder="Почта">
+            <input type="password" name="password" placeholder="Пароль">
+        </div>
+
+        <div class="form-row form-row--file">
+            <p>Добавить фото профиля</p>
+            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+            <label for="avatar" data-file-name="...">Загрузить</label>
+        </div>
+
+        <div class="form-row form-row--radio mt-2">
+            <input id="period1" type="radio" name="period" value="1" checked>
+            <label for="period1">1 месяц подписки</label>
+
+            <input id="period2" type="radio" name="period" value="3m">
+            <label for="period2">3 месяца подписки</label>
+
+            <input id="period3" type="radio" name="period" value="1y">
+            <label for="period3">1 год подписки</label>
+        </div>
+        <div class="form-row form-row--submit mt-3">
+            <button type="submit" class="btn form-submit">Регистрация</button>
+        </div>
+    </form>
+</div>

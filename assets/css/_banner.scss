@@ -1,0 +1,177 @@
+.banner {
+    background-color: $bg-l;
+    border-radius: $br-md;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
+
+    @media screen and (min-width: $bp-lg) {
+        background-position: center right;
+        border-radius: $br-lg;
+    }
+
+    @media screen and (min-width: $bp-xl) {
+        border-radius: $br-xl;
+    }
+
+    &--min-h {
+        min-height: 600px;
+
+        @media screen and (min-width: $bp-lg) {
+            min-height: auto;
+        }
+    }
+
+    &--shadow {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #111212 40%);
+            z-index: 0;
+        }
+
+        @media screen and (min-width: $bp-lg) {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__layout {
+        padding: 30px 20px;
+        max-width: 860px;
+        position: relative;
+        z-index: 1;
+
+        @media screen and (min-width: $bp-md) {
+            padding: 45px;
+        }
+
+        @media screen and (min-width: $bp-lg) {
+            padding: 65px 52px;
+        }
+
+        &--column {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 20px;
+            max-width: none;
+        }
+    }
+
+    &__head {
+        display: flex;
+
+        column-gap: 50px;
+        flex-direction: column;
+        row-gap: 20px;
+
+        @media screen and (min-width: $bp-lg) {
+            align-items: center;
+            flex-direction: row;
+        }
+
+        &--column {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 20px;
+            max-width: 1000px;
+        }
+
+        &--sm {
+            max-width: 600px;
+        }
+    }
+
+    &__title {
+        font-size: 35px;
+        font-weight: 500;
+        line-height: 1.1;
+
+        @media screen and (min-width: $bp-lg) {
+            font-size: 68px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        font-weight: 200;
+        line-height: 1.5;
+
+        &--lg {
+            font-size: 18px;
+
+            @media screen and (min-width: $bp-lg) {
+                font-size: 24px;
+            }
+        }
+    }
+
+    &__body {
+        margin-top: 30px;
+        display: flex;
+        column-gap: 60px;
+        flex-direction: column;
+        row-gap: 20px;
+
+        @media screen and (min-width: $bp-lg) {
+            align-items: center;
+            max-width: 90%;
+            flex-direction: row;
+        }
+    }
+
+    &__content {
+        font-size: 18px;
+        font-weight: 300;
+
+        @media screen and (min-width: $bp-lg) {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 300;
+
+            @media screen and (min-width: $bp-lg) {
+                font-size: 24px;
+            }
+        }
+    }
+
+    &__btn {
+        flex-shrink: 0;
+        display: block;
+        width: 169px;
+        height: 169px;
+        background-color: $main;
+        border-radius: 50%;
+        transition:
+            box-shadow $t-value,
+            background-color $t-value;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url("/assets/img/download-btn-decor.svg") no-repeat center / 100%;
+            transition: $t;
+        }
+
+        &:hover {
+            background-color: $main-d;
+            box-shadow: 0 0 0 6px $main-dd;
+            &::before {
+                transform: scale(0.98);
+            }
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}

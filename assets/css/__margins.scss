@@ -1,0 +1,113 @@
+@for $i from 0 through 6 {
+  .pt-#{$i},
+  .py-#{$i} {
+    padding-top: 1em * $i;
+  }
+}
+
+@for $i from 0 through 6 {
+  .pb-#{$i},
+  .py-#{$i} {
+    padding-bottom: 1em * $i;
+  }
+}
+
+@for $i from 0 through 6 {
+  .pl-#{$i},
+  .px-#{$i} {
+    padding-left: 1em * $i;
+  }
+}
+
+@for $i from 0 through 6 {
+  .pr-#{$i},
+  .px-#{$i} {
+    padding-right: 1em * $i;
+  }
+}
+
+@for $i from 0 through 6 {
+  .mt-#{$i},
+  .my-#{$i} {
+    margin-top: 1em * $i;
+  }
+}
+
+@for $i from 0 through 6 {
+  .mb-#{$i},
+  .my-#{$i} {
+    margin-bottom: 1em * $i;
+  }
+}
+
+@for $i from 0 through 6 {
+  .mx-#{$i},
+  .ml-#{$i} {
+    margin-left: 1em * $i;
+  }
+}
+
+@for $i from 0 through 6 {
+  .mx-#{$i},
+  .mr-#{$i} {
+    margin-right: 1em * $i;
+  }
+}
+
+.mr-auto,
+.mx-auto {
+  margin-right: auto;
+}
+
+.ml-auto,
+.mx-auto {
+  margin-left: auto;
+}
+
+.mb-05,
+.my-05 {
+  margin-bottom: 0.5em;
+}
+
+.mt-05,
+.my-05 {
+  margin-top: 0.5em;
+}
+
+.pb-05,
+.py-05 {
+  padding-bottom: 0.5em;
+}
+
+.pt-05,
+.py-05 {
+  padding-top: 0.5em;
+}
+
+.pl-05,
+.px-05 {
+  padding-left: 0.5em;
+}
+
+.pr-05,
+.px-05 {
+  padding-right: 0.5em;
+}
+
+// @for $i from 0 through 6 {
+//   .mt-sm-#{$i},
+//   .my-sm-#{$i} {
+//     @media screen and (max-width: $bp-md) {
+//       margin-top: 1em * $i;
+//     }
+//   }
+// }
+
+// @for $i from 0 through 6 {
+//   .mb-sm-#{$i},
+//   .my-sm-#{$i} {
+//     @media screen and (max-width: $bp-md) {
+//       margin-bottom: 1em * $i;
+//     }
+//   }
+// }

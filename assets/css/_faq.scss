@@ -1,0 +1,97 @@
+.faq {
+    display: grid;
+    align-items: flex-start;
+    column-gap: 26px;
+    row-gap: 30px;
+
+    @media screen and (min-width: $bp-lg) {
+        grid-template-columns: 1.5fr 3fr;
+    }
+
+    &__head {
+        border: 1.45px solid $line;
+        padding: 2.5em;
+        border-radius: $br-md;
+
+        @media screen and (min-width: $bp-lg) {
+            border-radius: $br-lg;
+        }
+
+        @media screen and (min-width: $bp-xl) {
+            min-height: 580px;
+            padding: 4.5em 4em;
+        }
+    }
+
+    &__body {
+        background-color: $bg-l;
+        padding: 20px 30px;
+        position: relative;
+        border-radius: $br-md;
+
+        @media screen and (min-width: $bp-lg) {
+            padding: 40px 60px;
+            border-radius: $br-lg;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: calc(100% - 60px);
+            height: 5px;
+            border-radius: 5px;
+            background-color: $bg-i;
+            position: absolute;
+            top: 0;
+
+            @media screen and (min-width: $bp-lg) {
+                width: calc(100% - 120px);
+            }
+        }
+    }
+}
+
+.menu-aside {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+
+    @media screen and (min-width: $bp-lg) {
+        font-size: 18px;
+        row-gap: 2.75em;
+    }
+
+    li {
+        a {
+            color: $text;
+            font-weight: 300;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 45px;
+                height: 3px;
+                background-color: $c-4;
+                transform: rotate(-20deg);
+                transition: $t;
+                display: none;
+            }
+
+            &.is-active {
+                font-weight: 600;
+
+                &::before {
+                    display: block;
+                }
+            }
+        }
+    }
+}

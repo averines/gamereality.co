@@ -1,0 +1,131 @@
+.footer-wrapper {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 20px;
+
+    @media screen and (min-width: $bp-lg) {
+        margin-top: 60px;
+    }
+
+    &.section--bg {
+        border-radius: var(--br-section) var(--br-section) 0 0;
+    }
+}
+
+.footer-top {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
+
+    @media screen and (min-width: $bp-lg) {
+        display: flex;
+    }
+
+    @media screen and (min-width: $bp-xl) {
+        padding: 60px 0;
+    }
+}
+
+.footer-row {
+    border-top: 1px solid $line;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 33px 0;
+    flex-direction: column;
+    row-gap: 20px;
+    column-gap: 40px;
+
+    @media screen and (min-width: $bp-md) {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    a {
+        color: $text;
+        transition: $t;
+
+        &:hover {
+            color: $main;
+        }
+    }
+
+    &__content {
+        display: flex;
+        column-gap: 28px;
+        flex-direction: column;
+        row-gap: 10px;
+
+        @media screen and (min-width: $bp-xl) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &--p-sm {
+        padding: 23px 0;
+    }
+}
+
+.footer-contacts {
+    display: flex;
+    column-gap: 10px;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    align-items: center;
+
+    @media screen and (min-width: $bp-lg) {
+        align-items: center;
+    }
+
+    &__social {
+        display: block;
+        width: 37px;
+        height: 38px;
+        border: 1.45px solid $line;
+        border-radius: 50%;
+        flex-shrink: 0;
+
+        &:hover {
+            background: $bg-i;
+            box-shadow: 0 0 0 5px $line-d;
+        }
+    }
+
+    &__tel {
+        font-size: 20px;
+        text-decoration: none;
+        margin-left: 5px;
+
+        @media screen and (min-width: $bp-sm) {
+            font-size: 24px;
+        }
+    }
+}
+
+.footer-main {
+    margin-top: 20px;
+
+    @media screen and (min-width: $bp-lg) {
+        margin-top: 0;
+    }
+
+    > .footer-row {
+        &:first-child {
+            border: none;
+
+            @media screen and (min-width: $bp-lg) {
+                border-top: 1px solid $line;
+            }
+
+            .footer-row__content {
+                &:first-child {
+                    @media screen and (min-width: $bp-lg) {
+                        flex-direction: row;
+                    }
+                }
+            }
+        }
+    }
+}

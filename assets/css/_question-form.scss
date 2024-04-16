@@ -1,0 +1,46 @@
+.question-form {
+    &__wrapper {
+        display: flex;
+        column-gap: 50px;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (min-width: $bp-lg) {
+            align-items: flex-start;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        @media screen and (min-width: $bp-xl) {
+            column-gap: 90px;
+        }
+    }
+
+    &__content {
+        font-size: 14px;
+        max-width: 564px;
+
+        @media screen and (min-width: $bp-lg) {
+            font-size: 16px;
+        }
+
+        > p {
+            font-size: 14px;
+
+            @media screen and (min-width: $bp-lg) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 35px;
+        font-weight: 500;
+        margin-bottom: 0.33em;
+        margin-top: 0.33em;
+
+        @media screen and (min-width: $bp-xl) {
+            font-size: 68px;
+        }
+    }
+}

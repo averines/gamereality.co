@@ -1,0 +1,304 @@
+.expert-cards {
+    &--slider {
+        @media screen and (min-width: $bp-xsm) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 30px;
+            row-gap: 30px;
+        }
+
+        @media screen and (min-width: $bp-sm) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (min-width: $bp-md) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .expert-card {
+            display: none;
+
+            &:first-child {
+                display: inline-flex;
+            }
+
+            @media screen and (min-width: $bp-xsm) {
+                display: inline-flex;
+            }
+        }
+
+        + .slider-nav {
+            margin-bottom: 3em;
+
+            @media screen and (min-width: $bp-xsm) {
+                display: none;
+            }
+        }
+    }
+}
+
+.expert-card {
+    position: relative;
+    border-radius: $br-md;
+    display: inline-flex;
+    overflow: hidden;
+
+    @media screen and (min-width: $bp-lg) {
+        border-radius: $br-lg;
+    }
+
+    @media screen and (min-width: $bp-xl) {
+        border-radius: $br-xl;
+    }
+
+    &__content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        inset: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: radial-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(102, 102, 102, 0) 70%);
+            bottom: 0;
+            left: -90%;
+            bottom: -45%;
+            z-index: 1;
+        }
+    }
+
+    &__head {
+        margin-top: auto;
+        padding: 20px 10px;
+        position: relative;
+        z-index: 2;
+
+        @media screen and (min-width: $bp-xsm) {
+            padding: 20px;
+        }
+
+        @media screen and (min-width: $bp-sm) {
+            padding: 25px;
+        }
+
+        @media screen and (min-width: $bp-xl) {
+            padding: 44px 33px;
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        font-size: 18px;
+        padding: 15px;
+        background-color: rgba(217, 217, 217, 0.13);
+        border-radius: $br-xl;
+        backdrop-filter: blur(5px);
+
+        @media screen and (min-width: $bp-sm) {
+            padding: 18px 27px;
+        }
+
+        @media screen and (min-width: $bp-xl) {
+            font-size: 24px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 14px;
+        max-width: 230px;
+        margin-left: 10px;
+
+        @media screen and (min-width: $bp-sm) {
+            margin-left: 26px;
+        }
+    }
+
+    &__img {
+        display: block;
+        border-radius: $br-md;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        width: 100%;
+        height: auto;
+
+        @media screen and (min-width: $bp-lg) {
+            border-radius: $br-lg;
+        }
+
+        @media screen and (min-width: $bp-xl) {
+            border-radius: $br-xl;
+        }
+    }
+
+    &--xl {
+        max-height: 500px;
+        @media screen and (min-width: $bp-lg) {
+            max-height: none;
+        }
+        .expert-card {
+            &__img {
+                max-width: 100%;
+                object-fit: contain;
+                object-position: bottom center;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &--lg {
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        column-gap: 30px;
+        margin-bottom: 65px;
+
+        @media screen and (min-width: $bp-sm) {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr;
+            padding-bottom: 60px;
+            border-bottom: 2px solid $line-d;
+        }
+
+        @media screen and (min-width: $bp-lg) {
+            column-gap: 60px;
+        }
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .expert-card {
+            &__head {
+                padding: 0;
+            }
+
+            &__title {
+                padding: 18px 50px;
+            }
+
+            &__subtitle {
+                margin-top: 0;
+                max-width: 300px;
+                font-size: 16px;
+            }
+
+            &__body {
+                font-weight: 300;
+
+                @media screen and (min-width: $bp-lg) {
+                    margin-top: 2em;
+                }
+
+                p {
+                    font-weight: 300;
+                }
+            }
+
+            &__content {
+                position: relative;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            &__footer {
+                display: flex;
+
+                flex-direction: column;
+                row-gap: 20px;
+
+                @media screen and (min-width: $bp-lg) {
+                    align-items: center;
+                    flex-direction: row;
+                    margin-top: 2.5em;
+                }
+            }
+
+            &__btn {
+                color: $text;
+                background-color: $main;
+                border-radius: $br-lg;
+                padding: 2em 4em;
+                transition: $t;
+
+                &:hover {
+                    background-color: $main-d;
+                }
+            }
+        }
+    }
+
+    &--md {
+        display: flex;
+        flex-direction: column;
+
+        .expert-card {
+            &__img {
+                display: block;
+                border: 2px solid $line;
+            }
+
+            &__title {
+                padding: 0;
+                font-size: 16px;
+                font-weight: 400;
+                background: none;
+            }
+
+            &__subtitle {
+                font-size: 12px;
+                font-weight: 300;
+                padding: 0;
+                margin: 1em 0 0 0;
+                max-width: none;
+            }
+
+            &__content {
+                position: relative;
+                padding: 1em;
+
+                @media screen and (min-width: $bp-lg) {
+                    padding: 1.5em 2em;
+                }
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &--xsm {
+        display: flex;
+        column-gap: 10px;
+        margin-top: 0.5em;
+
+        > img {
+            flex-shrink: 0;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .expert-card {
+            &__title {
+                padding: 0;
+                font-size: 14px;
+                background: none;
+                font-weight: 300;
+            }
+        }
+    }
+}
